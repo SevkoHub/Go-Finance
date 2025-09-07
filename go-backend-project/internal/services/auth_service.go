@@ -26,7 +26,7 @@ func NewUserService() *UserService {
 }
 
 // Register a new user
-func (us *UserService) Register(username, password, role string) (User, error) {
+func (us *UserService) RegisterUser(username, password, role string) (User, error) {
 	// Check if the username already exists
 	for _, user := range us.users {
 		if user.Username == username {
@@ -48,7 +48,7 @@ func (us *UserService) Register(username, password, role string) (User, error) {
 }
 
 // Login a user
-func (us *UserService) Login(username, password string) (User, error) {
+func (us *UserService) LoginUser(username, password string) (User, error) {
 	for _, user := range us.users {
 		if user.Username == username && user.Password == password {
 			return user, nil // Successful login
